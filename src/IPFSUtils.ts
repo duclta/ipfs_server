@@ -6,9 +6,9 @@ export class IPFSUtils {
   static get client(): IPFSHTTPClient {
     if (this._client) return this._client;
 
-    const projectId = process.env.PROJECT_ID ?? "2DM8tNDeWgAUDtf2ofkWyWPmMyr";
+    const projectId = process.env.PROJECT_ID!;
     const secretKey =
-      process.env.SECRET_KEY ?? "06312b8c53ece054488e089047c04cdb";
+      process.env.SECRET_KEY!;
 
     const auth =
       "Basic " + Buffer.from(projectId + ":" + secretKey).toString("base64");
